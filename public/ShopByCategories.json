@@ -1,0 +1,43 @@
+[
+    {
+      "_id": 1,
+      "name": "Auto Body Parts and Mirrors",
+      "img":"https://i.ibb.co/V9t23DS/1.webp"
+    },
+    {
+      "_id": 2,
+      "name": "Headlights and Lighting",
+      "img":"https://i.ibb.co/r5vrQyr/2.jpg"
+    },
+    {
+      "_id": 3,
+      "name": "Engine and Drivetrain",
+      "img":"https://i.ibb.co/F8BcnhH/3.jpg"
+    },
+    {
+      "_id": 4,
+      "name": "Brakes, Suspension and Steering",
+      "img":"https://i.ibb.co/SPDt8zF/4.webp"
+    },
+    {
+      "_id": 5,
+      "name": "Interior Accessories",
+      "img":"https://i.ibb.co/T1bkKBz/5.webp"
+    },
+    {
+      "_id": 6,
+      "name": "Exterior Accessories",
+      "img":"https://i.ibb.co/SdFJDqk/6.webp"
+    },
+    {
+      "_id": 7,
+      "name": "Wheels",
+      "img":"https://i.ibb.co/q7cLQVm/7.webp"
+    },
+    {
+      "_id": 8,
+      "name": "Tools and Garage",
+      "img":"https://i.ibb.co/c3Y8ymh/8.jpg"
+    }
+ 
+  ]

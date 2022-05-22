@@ -23,10 +23,10 @@ const Login = () => {
     const from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        if (user) {
+        if (user || googleUser) {
             navigate(from, { replace: true });
         }
-    }, [user, from, navigate])
+    }, [user, googleUser, from, navigate])
 
     if (error || googleError) {
         signinError = <p className='text-red-500 mb-3 text-center'><small>{error?.message || googleError?.message}</small></p>
@@ -40,7 +40,7 @@ const Login = () => {
         signInWithEmailAndPassword(data.email, data.password);
     };
     return (
-        <div className='flex justify-center items-center h-screen'>
+        <div className='flex justify-center items-center mt-5 mb-14'>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl">Login</h2>

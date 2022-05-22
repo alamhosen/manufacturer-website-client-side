@@ -1,0 +1,63 @@
+[
+    {
+      "_id": 1,
+      "name": "Toyota",
+      "img":"https://i.ibb.co/j8vyZrb/Toyota.jpg"
+    },
+    {
+      "_id": 2,
+      "name": "Mercedes-benz",
+      "img":"https://i.ibb.co/5LJdF8C/Mercedes-Benz.jpg"
+    },
+    {
+      "_id": 3,
+      "name": "Chevrolet",
+      "img":"https://i.ibb.co/LNm8kDH/Chevrolet.jpg"
+    },
+    {
+      "_id": 4,
+      "name": "Mazda",
+      "img":"https://i.ibb.co/jfjQP0M/Mazda.jpg"
+    },
+    {
+      "_id": 5,
+      "name": "Mitsubishi",
+      "img":"https://i.ibb.co/Hhwbm2n/Mitsubishi.jpg"
+    },
+    {
+      "_id": 6,
+      "name": "Nissan",
+      "img":"https://i.ibb.co/L8CW2jn/Nissan.jpg"
+    },
+    {
+      "_id": 7,
+      "name": "Suzuki",
+      "img":"https://i.ibb.co/52Z7hcp/Suzuki.jpg"
+    },
+    {
+      "_id": 8,
+      "name": "Volkswagen",
+      "img":"https://i.ibb.co/ypcJBnF/Volkswagen.jpg"
+    },
+    {
+      "_id": 9,
+      "name": "BMW",
+      "img":"https://i.ibb.co/pP2nrYN/BMW.jpg"
+    },
+    {
+      "_id": 10,
+      "name": "Ford",
+      "img":"https://i.ibb.co/DLhs5Js/Ford.jpg"
+    },
+    {
+      "_id": 11,
+      "name": "Honda",
+      "img":"https://i.ibb.co/RC99KvZ/Honda.jpg"
+    },
+    {
+      "_id": 12,
+      "name": "Dodge",
+      "img":"https://i.ibb.co/fxsW1jQ/Dodge.jpg"
+    }
+ 
+  ]

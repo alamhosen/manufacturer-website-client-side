@@ -17,6 +17,9 @@ const Navbar = () => {
         <li><Link to='/aboutus'>About Us</Link></li>
         <li><Link to='/contactus'>Contact Us</Link></li>
         <li><Link to='/blogs'>Blogs</Link></li>
+        {
+            user && <li><Link to=''>{user.displayName}</Link></li>
+        }
         <li>{user ? <button onClick={logout} className="btn btn-ghost">Sign Out</button> : <Link to='/login'>Login</Link>}</li>
     </>
     return (
@@ -30,7 +33,7 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">CarParts Plus</a>
+                <a className="btn btn-ghost normal-case text-xl" >CarParts Plus</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
