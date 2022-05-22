@@ -1,0 +1,43 @@
+[
+    {
+      "_id": 1,
+      "name": "Brandon",
+      "img":"https://www.amazon.com/avatar/default/amzn1.account.AHHIZQQB45FATE35XISMCHX3CLBA?square=true&max_width=460",
+      "description": "Considering the price my expectations weren't very high. But I was pleasantly surprised by the quality and look of this grill. Made with good, strong material and it was easy to install.",
+      "rating": 5
+
+    },
+    {
+      "_id": 2,
+      "name": "Damon",
+      "img":"https://www.amazon.com/avatar/default/amzn1.account.AHWRSGDOCRXXR4M2ZEKG6MI6EMMA?square=true&max_width=460",
+      "description": "The grill arrived well packaged and included replacement clips & pins. I further customized the center vent, which was readily removed, by painting it white to match my Jeep. The grill arrived with two sets of lights, each easily replaced to match your preference.",
+      "rating": 4.9
+
+    },
+    {
+      "_id": 3,
+      "name": "Becca",
+      "img":"https://www.amazon.com/avatar/default/amzn1.account.AGO5KYFULCFERCX2XK6YW5NVQRFQ?square=true&max_width=460",
+      "description": "Update!! With some extra help, we were able to get this to fit on my 2021 JL model and it looks great!! The seller responded to my feedback and was helpful even after I got the part to fit.",
+      "rating": 5
+
+    },
+    {
+      "_id": 4,
+      "name": "kevin",
+      "img":"https://www.amazon.com/avatar/default/amzn1.account.AG2CGFPR3O5HNSYTYVNB665YP5UQ?square=true&max_width=460",
+      "description": "Looks really good everything is nice up until you touch and install it you realize how flimsy and cheap it is. I kept the stock on hand since idk how long this will last with the Florida sun and how the color will hold. I ceramic coated it with carpro to help with the fading.",
+      "rating": 4.8
+
+    },
+    {
+      "_id": 5,
+      "name": "DJ Paradox",
+      "img":"https://www.amazon.com/avatar/default/amzn1.account.AF2463IFQQDIE6KOQYE3EH2ILHZA?square=true&max_width=460",
+      "description": "I had some paint flake off but the seller immediately replaced with a new grill. Fit my 2020 JLU, a little tight for installation but once it was on, it was solid. 5 stars because it looks great and with their high level of customer service, you just can't go wrong.",
+      "rating": 5
+
+    }
+ 
+  ]
