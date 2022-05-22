@@ -26,7 +26,7 @@ const Summaries = () => {
             text: 'Parts',
         },
         {
-            _id: 3,
+            _id: 4,
             img: customer,
             number: '10k+',
             text: 'Happy customers',

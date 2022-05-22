@@ -4,14 +4,14 @@ const Review = ({review}) => {
     const {name, img, description, rating} = review;
     return (
         <div>
-            <div class="card lg:max-w-lg bg-base-100 shadow-xl">
-                <figure class="px-10 pt-10">
-                    <img style={{width:'150px'}} src={img} alt="" class="rounded-xl" />
+            <div className="card lg:max-w-lg bg-base-100 shadow-xl">
+                <figure className="px-10 pt-10">
+                    <img style={{width:'150px'}} src={img} alt="" className="rounded-xl" />
                 </figure>
-                <div class="card-body items-center text-center">
-                    <h2 class="card-title">{name}</h2>
+                <div className="card-body items-center text-center">
+                    <h2 className="card-title">{name}</h2>
                     <p>{description}</p>
-                    <h2 class="card-title">{rating} stars</h2>
+                    <h2 className="card-title">{rating} stars</h2>
                 </div>
             </div>
         </div>
