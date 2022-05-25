@@ -10,6 +10,10 @@ import Footer from './components/Shared/Footer';
 import Navbar from './components/Shared/Navbar';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './components/Dashboard/Dashboard';
+import MyOrders from './components/Dashboard/MyOrders';
+import AddAReview from './components/Dashboard/AddAReview';
+import MyProfile from './components/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -21,6 +25,12 @@ function App() {
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
           <Route path='/purchase/:productId' element={<RequireAuth><Purchase></Purchase></RequireAuth>}></Route>
+          <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
+            <Route index element={<MyOrders></MyOrders>}></Route>
+            <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
+            <Route path='addreview' element={<AddAReview></AddAReview>}></Route>
+            <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+          </Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />
