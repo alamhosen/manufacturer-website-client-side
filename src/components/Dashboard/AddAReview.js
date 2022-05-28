@@ -41,13 +41,13 @@ const AddAReview = () => {
 
     return (
         <div className='flex justify-center items-center mt-5'>
-            <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="card w-3/5 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl">Add Your Review</h2>
 
                     <form onSubmit={handleSubmit(onSubmit)}>
 
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
@@ -59,13 +59,13 @@ const AddAReview = () => {
                                     }
                                 })}
                                 type="text"
-                                placeholder="Your Name" className="input input-bordered w-full max-w-xs"
+                                placeholder="Your Name" className="input input-bordered w-full"
                             />
                             <label className="label">
                                 {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
                             </label>
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Description</span>
                             </label>
@@ -90,7 +90,7 @@ const AddAReview = () => {
 
                             </label>
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Rating</span>
                             </label>
@@ -112,7 +112,7 @@ const AddAReview = () => {
                                 })}
 
                                 type="text"
-                                placeholder="Rating" className="input input-bordered w-full max-w-xs"
+                                placeholder="Rating" className="input input-bordered w-full"
                             />
                             <label className="label">
                                 {errors.rating?.type === 'required' && <span className="label-text-alt text-red-500">{errors.rating.message}</span>}
@@ -121,7 +121,7 @@ const AddAReview = () => {
 
                             </label>
                         </div>
-                        <div className="form-control w-full max-w-xs">
+                        <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text">Image</span>
                             </label>
@@ -136,13 +136,13 @@ const AddAReview = () => {
                                 })}
 
                                 type="text"
-                                placeholder="Your image URL" className="input input-bordered w-full max-w-xs"
+                                placeholder="Your image URL" className="input input-bordered w-full"
                             />
                             <label className="label">
                                 {errors.img?.type === 'required' && <span className="label-text-alt text-red-500">{errors.rating.img}</span>}
                             </label>
                         </div>
-                        <input className='btn btn-primary w-full max-w-xs' type="submit" value='Add Review' />
+                        <input className='btn btn-primary w-full' type="submit" value='Add Review' />
                     </form>
 
                 </div>

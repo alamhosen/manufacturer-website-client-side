@@ -14,6 +14,8 @@ import Dashboard from './components/Dashboard/Dashboard';
 import MyOrders from './components/Dashboard/MyOrders';
 import AddAReview from './components/Dashboard/AddAReview';
 import MyProfile from './components/Dashboard/MyProfile';
+import UpdateProfile from './components/Dashboard/UpdateProfile';
+import Users from './components/Dashboard/Users';
 
 function App() {
   return (
@@ -30,7 +32,9 @@ function App() {
             <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
             <Route path='addreview' element={<AddAReview></AddAReview>}></Route>
             <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+            <Route path='users' element={<Users></Users>}></Route>
           </Route>
+          <Route path='updateprofile' element={<UpdateProfile></UpdateProfile>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />

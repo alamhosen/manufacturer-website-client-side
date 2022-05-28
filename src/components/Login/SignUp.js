@@ -4,6 +4,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useForm } from "react-hook-form";
 import Loading from '../Shared/Loading';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 // import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
@@ -17,7 +18,7 @@ const SignUp = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
-    // const [token]  = useToken(user || googleUser);
+     const [token]  = useToken(user || googleUser);
 
     let signupError;
     const navigate = useNavigate();
@@ -30,8 +31,8 @@ const SignUp = () => {
         return <Loading></Loading>
     }
 
-    if (user) {
-        navigate('/appointment');
+    if (token) {
+        navigate('/');
         
     }
 
@@ -119,14 +120,14 @@ const SignUp = () => {
                             </label>
                         </div>
                         {signupError}
-                        <input className='btn w-full max-w-xs' type="submit" value='Sign Up' />
+                        <input className='btn btn-primary w-full max-w-xs' type="submit" value='Sign Up' />
                     </form>
                     <p className='text-center'><small>Already have an account? <Link className='text-secondary' to='/login'>Please Login</Link> </small></p>
 
                     <div className="divider">OR</div>
                     <button
                         onClick={() => signInWithGoogle()}
-                        className="btn btn-outline"
+                        className="btn btn-primary"
                     >Continue With Google</button>
                 </div>
             </div>
