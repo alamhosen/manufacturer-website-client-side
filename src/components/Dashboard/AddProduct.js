@@ -9,30 +9,35 @@ const AddProduct = () => {
         const name = data.name;
         const img = data.img;
         const description = data.description;
-        const rating = data.rating;
-        const review = {
-            name,
-            img,
-            description,
-            rating        
-        }
-        console.log(review);
+        const available = parseInt(data.available);
+        const minqty = parseInt(data.minqty);
+        const price = parseInt(data.price);
 
-        fetch('http://localhost:5000/review', {
+        const parts = {
+            name,
+            description,
+            available,
+            minqty,
+            price,
+            img,      
+        }
+        console.log(parts);
+
+        fetch('http://localhost:5000/parts', {
             method:'POST',
             headers:{
                 'content-type': 'application/json'
             },
-            body:JSON.stringify(review)
+            body:JSON.stringify(parts)
         })
         .then(res => res.json())
         .then(inserted => {
             if(inserted.insertedId){
-                toast.success('Successfully added your review')
+                toast.success('Successfully added your product')
                 reset()
             }
             else{
-                toast.error('Failed to add review')
+                toast.error('Failed to add product')
             }
         })
 
@@ -148,7 +153,7 @@ const AddProduct = () => {
                                     }                                  
                                 })}
 
-                                type="number"
+                                type="text"
                                 placeholder="Price" className="input input-bordered w-full"
                             />
                             <label className="label">
@@ -178,7 +183,7 @@ const AddProduct = () => {
                                 {errors.img?.type === 'required' && <span className="label-text-alt text-red-500">{errors.rating.img}</span>}
                             </label>
                         </div>
-                        <input className='btn btn-primary w-full' type="submit" value='Add Review' />
+                        <input className='btn btn-primary w-full' type="submit" value='Add Product' />
                     </form>
 
                 </div>
