@@ -32,22 +32,22 @@ const MyOrders = () => {
     return (
         <div>
             <h2 className='text-2xl text-center my-3'>Your Total Order: {orders.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
                             <th>Product Name</th>
                             <th>Quantity</th>
                             <th>Total Price</th>
-                            <th>Status </th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
 
                         {
                             orders.map((order, index) =>
-                                <tr>
+                                <tr key={order._id}>
                                     <th>{index + 1}</th>
                                     <td>{order.productName}</td>
                                     <td>{order.quantity}</td>
