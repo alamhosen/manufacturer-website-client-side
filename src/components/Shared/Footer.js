@@ -33,7 +33,7 @@ const Footer = () => {
                     <p>CarParts Plus Wholesale Ltd. <br/>Manufacturing Auto Parts Since 1992</p>
                 </div>
                 <div>
-                <p>Copyright © {year} | <a style={{textDecoration:'none'}} href=""><strong>CarParts Plus</strong></a> | All rights reserved</p>
+                <p>Copyright © {year} | <a style={{textDecoration:'none'}} href="https://carparts-plus.web.app/"><strong>CarParts Plus</strong></a> | All rights reserved</p>
                 </div>
                 
             </footer>
