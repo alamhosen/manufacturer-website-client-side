@@ -22,9 +22,9 @@ const MyProfile = () => {
 
     return (
         <div>
-            <div class="hero">
-                <div class="hero-content flex-col w-3/5 ">
-                    <div class="text-center lg:text-left">
+            <div className="hero">
+                <div className="hero-content flex-col w-3/5 ">
+                    <div className="text-center lg:text-left">
                         <h2 className='font-bold text-center'>Name: {user.displayName}</h2>
                         <p className='text-center'>Email: {user.email}</p>
                         {
@@ -33,11 +33,11 @@ const MyProfile = () => {
                                 <div
                                     key={p._id}
                                 >
-                                    <figure class="px-10 pt-10">
-                                        <img style={{ width: '150px' }} src={p?.img} alt="Profile img" class="rounded-xl" />
+                                    <figure className="px-10 pt-10">
+                                        <img style={{ width: '150px' }} src={p?.img} alt="Profile img" className="rounded-xl" />
                                     </figure>
 
-                                    <div class="card-body">
+                                    <div className="card-body">
                                         <div className='text-2xl'>
                                             <p>Education: {p.education}</p>
                                             <p>Address: {p.address}</p>
@@ -49,7 +49,7 @@ const MyProfile = () => {
                                 </div>
                             )
                         }
-                        <button onClick={onClick} class="btn btn-outline btn-primary">Update Profile</button>
+                        <button onClick={onClick} className="btn btn-outline btn-primary">Update Profile</button>
                     </div>
 
                 </div>

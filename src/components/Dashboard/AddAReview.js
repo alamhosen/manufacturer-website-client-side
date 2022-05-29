@@ -16,7 +16,6 @@ const AddAReview = () => {
             description,
             rating        
         }
-        console.log(review);
 
         fetch('http://localhost:5000/review', {
             method:'POST',

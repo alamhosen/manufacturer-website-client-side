@@ -6,7 +6,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 import CancelOrderConfirmation from './CancelOrderConfirmation';
-import OrderRow from './OrderRow';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
@@ -32,28 +31,6 @@ const MyOrders = () => {
         if(isLoading){
             return <Loading></Loading>
         }
-
-    // useEffect(() => {
-    //     if (user) {
-    //         fetch(`http://localhost:5000/order?email=${user.email}`, {
-    //             method: 'GET',
-    //             headers: {
-    //                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-    //             }
-    //         })
-    //             .then(res => {
-    //                 if (res.status === 401 || res.status === 403) {
-    //                     signOut(auth);
-    //                     localStorage.removeItem('accessToken')
-    //                     navigate('/')
-    //                 }
-    //                 return res.json()
-    //             })
-    //             .then(data => {
-    //                 setOrders(data)
-    //             });
-    //     }
-    // }, [user])
 
     return (
         <div>
@@ -86,7 +63,7 @@ const MyOrders = () => {
                                             <p>Transaction Id: <span className='text-orange-500'>{order.transactionId}</span></p>
                                         </div>}
                                         {(order.totalPrice && !order.paid) && 
-                                         <label onClick={() => setCancelOrder(order)} for="cancel-order-confirmation" class="btn btn-xs btn-error text-white mx-2">Cancel</label>                                        
+                                         <label onClick={() => setCancelOrder(order)} htmlFor="cancel-order-confirmation" className="btn btn-xs btn-error text-white mx-2">Cancel</label>                                        
                                       }
                                     </td>
                                 </tr>

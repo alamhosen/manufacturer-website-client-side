@@ -38,21 +38,21 @@ const UpdateProfile = () => {
             else{
                 toast.error('Failed to update your info')
             }
-            console.log(data);
+            
         }) 
 
     };
     return (
         <div className='flex justify-center items-center'>
-            <div class="card w-2/5 shadow-2xl bg-base-100 my-5">
+            <div className="card w-2/5 shadow-2xl bg-base-100 my-5">
             <h2 className='text-center text-3xl font-bold mt-4'>Please provide your information</h2>
-                        <div class="card-body">
+                        <div className="card-body">
                             <form onSubmit={handleSubmit(onSubmit)}>
 
                                 {/* Education filed start*/}
-                                <div class="form-control ">
-                                    <label class="label">
-                                        <span class="label-text">Education</span>
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text">Education</span>
                                     </label>
                                     <input
                                         {...register("education", {
@@ -70,9 +70,9 @@ const UpdateProfile = () => {
 
                                 </div>
                                 {/* Address filed */}
-                                <div class="form-control ">
-                                    <label class="label">
-                                        <span class="label-text">Address</span>
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text">Address</span>
                                     </label>
                                     <textarea
                                         {...register("address", {
@@ -91,9 +91,9 @@ const UpdateProfile = () => {
                                 </div>
 
                                 {/* City */}
-                                <div class="form-control ">
-                                    <label class="label">
-                                        <span class="label-text">City</span>
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text">City</span>
                                     </label>
                                     <input
                                         {...register("city", {
@@ -111,9 +111,9 @@ const UpdateProfile = () => {
                                 </div>
 
                                 {/* Phone number */}
-                                <div class="form-control ">
-                                    <label class="label">
-                                        <span class="label-text">Phone</span>
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text">Phone</span>
                                     </label>
                                     <input
                                         {...register("phone", {
@@ -125,9 +125,9 @@ const UpdateProfile = () => {
                                 </div>
 
                                 {/* Linkedin profile */}
-                                <div class="form-control ">
-                                    <label class="label">
-                                        <span class="label-text">Linkedin profile link</span>
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text">Linkedin profile link</span>
                                     </label>
                                     <input
                                         {...register("linkedin", {
@@ -138,9 +138,9 @@ const UpdateProfile = () => {
                                 </div>
 
                                 {/* Image url */}
-                                <div class="form-control ">
-                                    <label class="label">
-                                        <span class="label-text">Your Photo URL</span>
+                                <div className="form-control ">
+                                    <label className="label">
+                                        <span className="label-text">Your Photo URL</span>
                                     </label>
                                     <input
                                         {...register("img", {
@@ -151,8 +151,8 @@ const UpdateProfile = () => {
                                     />
                                 </div>
                            
-                                <div class="form-control mt-6">
-                                    <button class="btn btn-primary">Update Profile</button>
+                                <div className="form-control mt-6">
+                                    <button className="btn btn-primary">Update Profile</button>
                                 </div>
                                 <p className='text-center mt-3 text-secondary font-semibold'><Link to='/dashboard/myprofile'>Back to your profile</Link></p>
 
