@@ -8,7 +8,6 @@
 * I have used JWT to create token and verify user to authorization.
 * I have used firebase to host client side
 * I have used heroku to host server side
-* 
 
 ## Which technologies I have used in this project?
 * React.js

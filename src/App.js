@@ -25,6 +25,8 @@ import Payment from './components/Dashboard/Payment';
 import NotFound from './components/NotFound/NotFound';
 import Blogs from './components/Shared/Blogs';
 import MyPortfolio from './components/Shared/MyPortfolio';
+import AboutUs from './components/Shared/AboutUs';
+import ContactUs from './components/Shared/ContactUs';
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
           </Route>
           <Route path='updateprofile' element={<UpdateProfile></UpdateProfile>}></Route>
           <Route path='blogs' element={<Blogs></Blogs>}></Route>
+          <Route path='aboutus' element={<AboutUs></AboutUs>}></Route>
+          <Route path='contactus' element={<ContactUs></ContactUs>}></Route>
           <Route path='myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
