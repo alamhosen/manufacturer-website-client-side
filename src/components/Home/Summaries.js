@@ -4,8 +4,15 @@ import review from '../../images/icon/customer-review.png'
 import feedback from '../../images/icon/feedback.png'
 import parts from '../../images/icon/parts.png'
 import customer from '../../images/icon/customer.png'
+import { useNavigate } from 'react-router-dom';
 
 const Summaries = () => {
+    const navigate = useNavigate();
+
+    const goContactPage = () =>{
+        navigate('/contactus')
+    }
+
     const summaries = [
         {
             _id: 1,
@@ -47,7 +54,7 @@ const Summaries = () => {
             <div>
                 <div className="text-center bg-base-100 shadow-xl">     
                         <h2 className="text-4xl my-5">Have any question about us?</h2>
-                        <button className="btn btn-primary mb-5">Contact us</button>
+                        <button onClick={goContactPage} className="btn btn-primary mb-5">Contact us</button>
                 </div>
             </div>
         </div>

@@ -39,7 +39,7 @@ const AddAReview = () => {
     };
 
     return (
-        <div className='flex justify-center items-center mt-5'>
+        <div className='flex justify-center items-center my-5'>
             <div className="card w-3/5 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl">Add Your Review</h2>
