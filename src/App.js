@@ -22,6 +22,7 @@ import AddProduct from './components/Dashboard/AddProduct';
 import ManageProducts from './components/Dashboard/ManageProducts';
 import RequireUser from './components/Login/RequireUser';
 import Payment from './components/Dashboard/Payment';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             <Route path='manageproducts' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
           </Route>
           <Route path='updateprofile' element={<UpdateProfile></UpdateProfile>}></Route>
+          <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />

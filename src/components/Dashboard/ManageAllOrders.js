@@ -1,10 +1,15 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
+import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 import Order from './Order';
 
 const ManageAllOrders = () => {
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/order', {
+    const [user] = useAuthState(auth);
+    console.log(user);
+
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/order/${user.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -28,16 +33,17 @@ const ManageAllOrders = () => {
                             <th>Total Quantity</th>
                             <th>Total Price</th>
                             <th>Customer Name </th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
-                    {
-                        orders.map((order, index) => <Order
-                        key={order._id}
-                        order={order}
-                        index={index}
-                        ></Order> )
-                    }
+                        {
+                            orders.map((order, index) => <Order
+                                key={order._id}
+                                order={order}
+                                index={index}
+                            ></Order>)
+                        }
                     </tbody>
                 </table>
             </div>

@@ -5,34 +5,55 @@ import { useQuery } from 'react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
+import CancelOrderConfirmation from './CancelOrderConfirmation';
 import OrderRow from './OrderRow';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
-    const [orders, setOrders] = useState([]);
+    // const [orders, setOrders] = useState([]);
+    const[calcleOrder, setCancelOrder] = useState(null);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (user) {
-            fetch(`http://localhost:5000/order?email=${user.email}`, {
-                method: 'GET',
-                headers: {
-                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-                }
-            })
-                .then(res => {
-                    if (res.status === 401 || res.status === 403) {
-                        signOut(auth);
-                        localStorage.removeItem('accessToken')
-                        navigate('/')
-                    }
-                    return res.json()
-                })
-                .then(data => {
-                    setOrders(data)
-                });
+    const {data: orders, isLoading, refetch} = useQuery('orders', () =>fetch(`http://localhost:5000/order?email=${user.email}`, {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
         }
-    }, [user])
+    })
+        .then(res => {
+            if (res.status === 401 || res.status === 403) {
+                signOut(auth);
+                localStorage.removeItem('accessToken')
+                navigate('/')
+            }
+            return res.json()
+        }) )
+
+        if(isLoading){
+            return <Loading></Loading>
+        }
+
+    // useEffect(() => {
+    //     if (user) {
+    //         fetch(`http://localhost:5000/order?email=${user.email}`, {
+    //             method: 'GET',
+    //             headers: {
+    //                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    //             }
+    //         })
+    //             .then(res => {
+    //                 if (res.status === 401 || res.status === 403) {
+    //                     signOut(auth);
+    //                     localStorage.removeItem('accessToken')
+    //                     navigate('/')
+    //                 }
+    //                 return res.json()
+    //             })
+    //             .then(data => {
+    //                 setOrders(data)
+    //             });
+    //     }
+    // }, [user])
 
     return (
         <div>
@@ -64,6 +85,9 @@ const MyOrders = () => {
                                             <p><span>Paid</span></p>
                                             <p>Transaction Id: <span className='text-orange-500'>{order.transactionId}</span></p>
                                         </div>}
+                                        {(order.totalPrice && !order.paid) && 
+                                         <label onClick={() => setCancelOrder(order)} for="cancel-order-confirmation" class="btn btn-xs btn-error text-white mx-2">Cancel</label>                                        
+                                      }
                                     </td>
                                 </tr>
                             )
@@ -73,6 +97,13 @@ const MyOrders = () => {
                     </tbody>
                 </table>
             </div>
+            {
+                calcleOrder && <CancelOrderConfirmation
+                calcleOrder={calcleOrder}
+                setCancelOrder={setCancelOrder}
+                refetch={refetch}
+                ></CancelOrderConfirmation>
+            }
         </div>
     );
 };
