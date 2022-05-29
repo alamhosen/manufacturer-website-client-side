@@ -1,5 +1,5 @@
 import { signOut } from 'firebase/auth';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useQuery } from 'react-query';
 import { Link, useNavigate } from 'react-router-dom';
@@ -9,25 +9,30 @@ import OrderRow from './OrderRow';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
+    const [orders, setOrders] = useState([]);
     const navigate = useNavigate();
 
-    const { data: orders, isLoading } = useQuery('orders', () => fetch(`http://localhost:5000/order/${user.email}`, {
-        method: 'GET',
-        headers: {
-            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    useEffect(() => {
+        if (user) {
+            fetch(`http://localhost:5000/order?email=${user.email}`, {
+                method: 'GET',
+                headers: {
+                    'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            })
+                .then(res => {
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken')
+                        navigate('/')
+                    }
+                    return res.json()
+                })
+                .then(data => {
+                    setOrders(data)
+                });
         }
-    }).then(res => {
-        if (res.status === 401 || res.status === 403) {
-            signOut(auth);
-            localStorage.removeItem('accessToken')
-            navigate('/')
-        }
-        return res.json()
-    }));
-
-    if (isLoading) {
-        return <Loading></Loading>
-    }
+    }, [user])
 
     return (
         <div>
@@ -55,7 +60,10 @@ const MyOrders = () => {
                                     <td>
                                         {(order.totalPrice && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success text-white'>Pay</button></Link>}
 
-                                        {(order.totalPrice && !order.paid) && <span className='text-success'>Paid</span>}
+                                        {(order.totalPrice && order.paid) && <div className='text-success font-bold'>
+                                            <p><span>Paid</span></p>
+                                            <p>Transaction Id: <span className='text-orange-500'>{order.transactionId}</span></p>
+                                        </div>}
                                     </td>
                                 </tr>
                             )

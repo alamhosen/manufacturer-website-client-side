@@ -21,7 +21,6 @@ const AddProduct = () => {
             price,
             img,      
         }
-        console.log(parts);
 
         fetch('http://localhost:5000/parts', {
             method:'POST',
