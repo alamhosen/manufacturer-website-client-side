@@ -23,6 +23,8 @@ import ManageProducts from './components/Dashboard/ManageProducts';
 import RequireUser from './components/Login/RequireUser';
 import Payment from './components/Dashboard/Payment';
 import NotFound from './components/NotFound/NotFound';
+import Blogs from './components/Shared/Blogs';
+import MyPortfolio from './components/Shared/MyPortfolio';
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
             <Route path='manageproducts' element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
           </Route>
           <Route path='updateprofile' element={<UpdateProfile></UpdateProfile>}></Route>
+          <Route path='blogs' element={<Blogs></Blogs>}></Route>
+          <Route path='myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
           <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
