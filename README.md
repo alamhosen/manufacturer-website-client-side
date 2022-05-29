@@ -1,4 +1,25 @@
-# CarParts Plus
+# [CarParts Plus]()
+
+## What I have done in this project?
+* I have use DaisyUI navbar to create responsive navbar.
+* DaisyUI hero used to craete banner 
+* I have used react firebase to make authentication in the login and register page.
+* I have used Mongodb to create server
+* I have used JWT to create token and verify user to authorization.
+* I have used firebase to host client side
+* I have used heroku to host server side
+* 
+
+## Which technologies I have used in this project?
+* React.js
+* daisyUI: Tailwind CSS components
+* React router
+* Google firebase
+* React firebase hooks
+* React-Toastify
+* Mongodb (for server)
+* JWT
+* Stripe for payment method
 
 ## Getting Started with Create React App
 
@@ -8,7 +29,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm start` 
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
