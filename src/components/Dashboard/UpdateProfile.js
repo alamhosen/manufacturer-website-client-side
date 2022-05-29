@@ -22,7 +22,7 @@ const UpdateProfile = () => {
             linkedin:data.linkedin,
             img:data.img
         }
-        fetch(`http://localhost:5000/profile/${email}`, {
+        fetch(`https://protected-lowlands-58562.herokuapp.com/profile/${email}`, {
             method: 'PUT',
             headers:{
                 'Content-Type': 'application/json'

@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
     const [user] = useAuthState(auth);
     console.log(user);
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/order/${user.email}`, {
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch(`https://protected-lowlands-58562.herokuapp.com/order/${user.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

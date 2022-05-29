@@ -13,7 +13,7 @@ const MyOrders = () => {
     const[calcleOrder, setCancelOrder] = useState(null);
     const navigate = useNavigate();
 
-    const {data: orders, isLoading, refetch} = useQuery('orders', () =>fetch(`http://localhost:5000/order?email=${user.email}`, {
+    const {data: orders, isLoading, refetch} = useQuery('orders', () =>fetch(`https://protected-lowlands-58562.herokuapp.com/order?email=${user.email}`, {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -14,7 +14,7 @@ const MyProfile = () => {
         navigate('/updateprofile')
     }
 
-    const { data: profile, isLoading } = useQuery('profile', () => fetch(`http://localhost:5000/profile/${user.email}`).then(res => res.json()));
+    const { data: profile, isLoading } = useQuery('profile', () => fetch(`https://protected-lowlands-58562.herokuapp.com/profile/${user.email}`).then(res => res.json()));
 
     if (isLoading) {
         return <Loading></Loading>

@@ -17,7 +17,7 @@ const AddAReview = () => {
             rating        
         }
 
-        fetch('http://localhost:5000/review', {
+        fetch('https://protected-lowlands-58562.herokuapp.com/review', {
             method:'POST',
             headers:{
                 'content-type': 'application/json'

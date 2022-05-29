@@ -5,7 +5,7 @@ const CancelOrderConfirmation = ({ setCancelOrder, calcleOrder, refetch }) => {
     const { _id, productName } = calcleOrder;
 
     const handleDelete = () => {
-        fetch(`http://localhost:5000/order/${_id}`, {
+        fetch(`https://protected-lowlands-58562.herokuapp.com/order/${_id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

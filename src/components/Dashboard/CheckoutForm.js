@@ -14,7 +14,7 @@ const CheckoutForm = ({ parts }) => {
   const {_id, totalPrice, customerName, email } = parts;
 
   useEffect(() => {
-    fetch('http://localhost:5000/create-payment-intent', {
+    fetch('https://protected-lowlands-58562.herokuapp.com/create-payment-intent', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -83,7 +83,7 @@ const CheckoutForm = ({ parts }) => {
         parts: _id,
         transactionId: paymentIntent.id,
       }
-      fetch(`http://localhost:5000/order/${_id}`, {
+      fetch(`https://protected-lowlands-58562.herokuapp.com/order/${_id}`, {
         method:'PATCH',
         headers: {
           'content-type': 'application/json',

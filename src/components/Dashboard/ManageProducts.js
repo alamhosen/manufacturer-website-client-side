@@ -7,7 +7,7 @@ import Product from './Product';
 const ManageProducts = () => {
     const [deletingProduct, setDeletingProduct] = useState(null);
 
-    const { data: parts, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/parts', {
+    const { data: parts, isLoading, refetch } = useQuery('orders', () => fetch('https://protected-lowlands-58562.herokuapp.com/parts', {
         method: 'GET',
         headers: {
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

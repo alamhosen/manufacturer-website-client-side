@@ -5,7 +5,7 @@ import PartsMake from './PartsMake';
 
 const PartsByMake = () => {
 
-    const {data: partsMake, isLoading} = useQuery('partsMake', () => fetch('http://localhost:5000/make').then(res => res.json()))
+    const {data: partsMake, isLoading} = useQuery('partsMake', () => fetch('https://protected-lowlands-58562.herokuapp.com/make').then(res => res.json()))
 
     if(isLoading){
         return <Loading></Loading>

@@ -22,7 +22,7 @@ const Purchase = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/parts/${productId}`)
+        fetch(`https://protected-lowlands-58562.herokuapp.com/parts/${productId}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, []);
@@ -48,7 +48,7 @@ const Purchase = () => {
             address
         }
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://protected-lowlands-58562.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

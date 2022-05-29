@@ -5,7 +5,7 @@ const Parts = () => {
     const [parts, setParts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/parts', {
+        fetch('https://protected-lowlands-58562.herokuapp.com/parts', {
             method: 'GET',
             headers:{
                 'content-type': 'application/json',

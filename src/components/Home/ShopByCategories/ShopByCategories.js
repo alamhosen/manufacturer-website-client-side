@@ -5,7 +5,7 @@ import Category from './Category';
 
 const ShopByCategories = () => {
 
-    const {data: categories, isLoading} = useQuery('caragories', () => fetch('http://localhost:5000/category').then(res => res.json()))
+    const {data: categories, isLoading} = useQuery('caragories', () => fetch('https://protected-lowlands-58562.herokuapp.com/category').then(res => res.json()))
 
     if(isLoading){
         return <Loading></Loading>
