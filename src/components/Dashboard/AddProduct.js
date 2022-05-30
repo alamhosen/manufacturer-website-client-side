@@ -9,9 +9,9 @@ const AddProduct = () => {
         const name = data.name;
         const img = data.img;
         const description = data.description;
-        const available = parseInt(data.available);
-        const minqty = parseInt(data.minqty);
-        const price = parseInt(data.price);
+        const available = parseFloat(data.available);
+        const minqty = parseFloat(data.minqty);
+        const price = parseFloat(data.price);
 
         const parts = {
             name,
